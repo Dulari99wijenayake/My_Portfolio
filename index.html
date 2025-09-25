@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MERN Stack Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      // Force dark mode
+      document.documentElement.classList.add('dark');
+
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            colors: {
+              'primary': '#0A0A0A',
+              'secondary': '#1A1A1A',
+              'card': '#1A1A1A',
+              
+              'accent': '#A21A53',                 // NEW Main Accent (Pink)
+              'accent-secondary': '#8A1647',        // Darker Pink for gradients
+              
+              'accent-green': '#1FAF70',           // The original vibrant green
+              'accent-green-dark': '#1A8C5B',      // Darker Green
+              'accent-green-light': '#52C498',     // Lighter Green
+              
+              'text-on-accent': '#FFFFFF',
+              
+              'tag-1': '#A21A53',                  // Main Pink
+              'tag-2': '#1FAF70',                  // Main Green
+              'tag-3': '#52C498',                  // Lighter Green
+              'tag-4': '#1A8C5B',                  // Darker Green
+              'tag-5': '#8A1647',                  // Darker Pink
+              'tag-6': '#3CB371',                  // A different green
+
+              'light': '#FFFFFF',
+              'dark': '#0A0A0A',
+              'muted': '#A0A0A0',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'typing': 'typing 2s steps(20, end), blink-caret .75s step-end infinite',
+              'blob': 'blob 7s infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+               typing: {
+                'from': { width: '0' },
+                'to': { width: '100%' }
+              },
+              'blink-caret': {
+                'from, to': { borderColor: 'transparent' },
+                '50%': { borderColor: 'var(--tw-prose-bold)' }
+              },
+              blob: {
+                '0%': {
+                  transform: 'translate(0px, 0px) scale(1)',
+                },
+                '33%': {
+                  transform: 'translate(30px, -50px) scale(1.1)',
+                },
+                '66%': {
+                  transform: 'translate(-20px, 20px) scale(0.9)',
+                },
+                '100%': {
+                  transform: 'translate(0px, 0px) scale(1)',
+                },
+              },
+              float: {
+                '0%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-10px)' },
+                '100%': { transform: 'translateY(0px)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.544.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-primary text-light">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
