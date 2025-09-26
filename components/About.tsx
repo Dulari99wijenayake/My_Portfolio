@@ -15,7 +15,7 @@ const About: React.FC = () => {
           </p>
           <div className="text-center md:text-left">
             <a
-              href="/CV/Dulari_SE_CV.pdf"
+              href="/My_Portfolio/CV/Dulari_SE_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-secondary text-on-accent font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg shadow-accent/20"
