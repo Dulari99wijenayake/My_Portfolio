@@ -7,13 +7,13 @@ const About: React.FC = () => {
     <Section id="about" title="About Me">
       <div className="flex flex-col items-center max-w-4xl mx-auto">
         <div className="w-full animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <p className="text-lg text-light leading-relaxed mb-4 text-justify">
+          <p className="text-lg text-light leading-relaxed mb-4 text-center">
             I am a passionate and dedicated final year Computer Science undergraduate with strong skills in full stack development. I enjoy designing and building innovative web applications that solve real world problems, combining creativity with technical expertise. My experience spans both frontend and backend development, and I am always eager to explore emerging technologies to enhance my knowledge and skills.
           </p>
-          <p className="text-lg text-light leading-relaxed mb-6 text-justify">
+          <p className="text-lg text-light leading-relaxed mb-6 text-center">
             My goal is to become a highly skilled software engineer who contributes to impactful projects and drives technological innovation. I am motivated by continuous learning, problem solving, and the opportunity to make a meaningful difference through technology while also growing as a leader in the field.
           </p>
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <a
               href="/My_Portfolio/CV/Dulari_SE_CV.pdf"
               target="_blank"
