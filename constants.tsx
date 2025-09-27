@@ -253,7 +253,7 @@ export const VOLUNTEER_EXPERIENCE: VolunteerExperience[] = [
     ]
   },
   {
-    role: 'Volunteer Coordinator',
+    role: 'Volunteer',
     organization: 'Faculty of Computing, NSBM',
     period: '2023',
     description: "Served as a coordinator for organizing Open Days at the Faculty of Computing, NSBM. Collaborated with the faculty team to plan and manage events, guide visitors, and create an engaging environment for prospective students, contributing to the success of the university’s outreach initiatives.",
@@ -261,6 +261,17 @@ export const VOLUNTEER_EXPERIENCE: VolunteerExperience[] = [
       'https://media.licdn.com/dms/image/v2/D5622AQE0lTRqz8UOdA/feedshare-shrink_1280/B56ZlluUlHI8As-/0/1758348268090?e=1761782400&v=beta&t=YhzgeDWss9oQR6xzIVWDvV-W9m5PHBsNKE55KurORD4',
       'https://media.licdn.com/dms/image/v2/D5622AQENVZfRUV91yw/feedshare-shrink_2048_1536/B56ZlluUk.HAAw-/0/1758348270846?e=1761782400&v=beta&t=vuSjsh51J4sAKxlh31lGhBCJfLfSOVSuiv-xWbFL4lQ',
       'https://media.licdn.com/dms/image/v2/D5622AQGAphtBNQRMcA/feedshare-shrink_1280/B56ZlluUllKAAs-/0/1758348270318?e=1761782400&v=beta&t=fN_9S5r8j5ojBxaqNwx_Pp_-v4347RVdo2ay4Cvl5x8'
+    ]
+  },
+  {
+    role: 'Volunteer',
+    organization: '21.1 Computer Science Batch, FOC, NSBM',
+    period: '2022',
+    description: "As part of the 21.1 Computer Science batch at NSBM Green University, I contributed to THINETHRA'22, an initiative to enhance IT literacy among school children. We completed the first phase at H/ Dolahena Kanishta Vidyalaya, Kiriwaththuduwa, laying a foundation for future tech minds through engaging sessions and awareness programs.",
+    images: [
+      'https://media.licdn.com/dms/image/v2/C5622AQF59xio21pbIQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1660848309734?e=1761782400&v=beta&t=6vM6lMVPwnUuNnkMWWMgX3SqQxy_KATj5xmS6DvjE4I',
+      'https://media.licdn.com/dms/image/v2/C5622AQE5_hOszXeeDQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1660848309980?e=1761782400&v=beta&t=YOAqS2dHD7MtQCbAPQRBwMHXBCDujMnWDnzi25iJaZ8',
+      'https://media.licdn.com/dms/image/v2/C5622AQHATwfAWVwfHQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1660848314300?e=1761782400&v=beta&t=7oUV92apY4nOCBWdZJLXUGN67TNHY9w0YDypwLzv5W4'
     ]
   },
 ];

@@ -1,19 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { SOCIAL_LINKS } from '../constants';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: ''
+  });
+  const form = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically handle form submission, e.g., send to an API endpoint.
-    alert('Thank you for your message! This is a demo form.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      if (form.current) {
+        const result = await emailjs.sendForm(
+          'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+          'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+          form.current,
+          'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        );
+
+        if (result.text === 'OK') {
+          setSubmitStatus({
+            type: 'success',
+            message: 'Thank you for your message! I will get back to you soon.'
+          });
+          setFormData({ name: '', email: '', message: '' });
+        }
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, something went wrong. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -24,7 +56,14 @@ const Contact: React.FC = () => {
           I'll get back to you as soon as possible!
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up">
+        <form ref={form} onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up">
+          {submitStatus.type && (
+            <div className={`p-4 rounded-md ${
+              submitStatus.type === 'success' ? 'bg-green-500/10 text-green-500' : 'bg-red-500/10 text-red-500'
+            }`}>
+              {submitStatus.message}
+            </div>
+          )}
           <div className="flex flex-col sm:flex-row gap-6">
             <input
               type="text"
@@ -33,7 +72,8 @@ const Contact: React.FC = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full bg-card border border-muted/30 text-light px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+              disabled={isSubmitting}
+              className="w-full bg-card border border-muted/30 text-light px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent transition-all disabled:opacity-50"
             />
             <input
               type="email"
@@ -42,7 +82,8 @@ const Contact: React.FC = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-card border border-muted/30 text-light px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+              disabled={isSubmitting}
+              className="w-full bg-card border border-muted/30 text-light px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent transition-all disabled:opacity-50"
             />
           </div>
           <textarea
